@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         // MARK: -  4️⃣ functionCall داخل المتغير  secretNameLetter قم باستدعاء الدالة
         
-        let functionCall = secretNameLetter(member: membersNamesArray)
+        let functionCall = secretNameLetter(members: membersNamesArray)
         
         
         // MARK: -   النهاية
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         
         // MARK: -  5️⃣ functionCall داخل المتغير  secretNameEmoji قم باستدعاء الدالة
         
-        let functionCall = secretNameLetter(member: membersNamesArray)
+        let functionCall = secretNameLetter(members: membersNamesArray)
         
         // MARK: -   النهاية
         
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - 2️⃣ تحت هذا الخط secretNameLetter قم بكتابة الداله
-    func secretNameLetter(member: [String]) -> String{
+    func secretNameLetter(members: [String]) -> String{
         var secret = ""
             for member in members{
             secret += member.prefix(1)
@@ -81,10 +81,18 @@ class ViewController: UIViewController {
     
     
     // MARK: - 3️⃣ تحت هذا الخط secretNameEmoji قم بكتابة الداله
-    func secretNameEmoji(array: [String]) -> String {
-        var secret: String = ""
-        let emojiLetter: [String: String] =
+    func secretNameEmoji(arrayOfMember: [String]) -> String {
+        var secret = ""
+            
+        let letter:[String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
         
+        let emoji:[String] = ["🥰", "🤬", "🥳", "😭", "🤫", "🤢", "🤷🏻‍♀️", "🚶🏻‍♀️", "🏃🏻‍♀️", "🌪", "🔥", "🌧", "🥩", "🧆", "🍕", "🍟", "🍔", "🛹", "✈️", "🏝", "💰", "🎈", "❤️", "💖", "🇰🇼", "👊🏼"]
+       
+        for member in arrayOfMember{
+            var firstLetter = member.prefix(1)
+            secret += String(firstLetter)
+        }
+        return secret
     }
     
     // MARK: -   النهاية
